@@ -1,0 +1,40 @@
+<div>    
+    <div class="results-container ml-r4 mr-r4 mb-r4 mt-r4">
+        <div class="columns">
+            <mat-grid-list cols="3" rowHeight="50vh">
+                <div class="column is-one-quarter" *ngFor="let element of elements">
+                    <mat-grid-tile>
+                        <div class="ficha mt-r2 mb-r2 mr-r8 ml-r8">
+                            <div class="picture">
+                                <img src="{{element.picture}}" class="img_ara ml-r4 mr-r4" width="100%" height="100%">
+                            </div>
+                            <div class="info-element">
+                                <h2 class="elementTitle">
+                                    <a href="#" [routerLink]="['/markets',element.name]" >{{element.name}}</a>
+                                </h2>
+                                <p>
+                                    {{element.description}}
+                                </p>
+                            </div>
+                        </div>
+                    </mat-grid-tile>
+                </div>
+            </mat-grid-list>
+        </div>
+          
+        
+        <!--Aquí viene lo interesante-->
+        
+        <app-paginator (paginaEmitter)="goToPage($event)" [page]="page" [totalPages]="totalPages" [numElements]="numElements"></app-paginator>
+        
+    </div>
+
+    <!--<mat-paginator [length]="200" [pageSizeOptions]="[10, 50, 100]" aria-label="Select page">
+
+
+    </mat-paginator>-->
+</div>
+
+
+
+

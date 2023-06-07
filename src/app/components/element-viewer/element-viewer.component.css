@@ -1,0 +1,14 @@
+.info-element{
+    margin-top: 8%;
+    margin-bottom: 2%;
+}
+
+a{
+    font-size: x-large !important;
+    font-family: Roboto, "Helvetica Neue", sans-serif !important;
+    color: #000000;
+}
+
+h2{
+    font-size: x-large !important;
+}

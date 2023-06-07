@@ -1,0 +1,128 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; margin:0;}
+html{
+    min-height: 100%;
+  position: relative;
+}
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background: #ffffff;
+    margin-bottom: 140px;
+}
+
+img{
+    border-radius: 30px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.full-width{
+    width: 100%;
+}
+
+button[mat-raised-button]{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btn-ingresar{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+/*Margenes con 20px*/
+.mt20{margin-top: 20px !important;}
+.mb20{margin-bottom: 20px !important;}
+.ml20{margin-left: 20px !important;}
+.mr20{margin-right: 20px !important;}
+
+/*Margenes con 10px*/
+.mt10{margin-top: 10px !important;}
+.mb10{margin-bottom: 10px !important;}
+.ml10{margin-left: 10px !important;}
+.mr10{margin-right: 10px !important;}
+
+/*Margenes con 70px*/
+.ml70{margin-left: 70px !important;}
+.mr70{margin-left: 70px !important;}
+.mb70{margin-left: 70px !important;}
+.mt70{margin-left: 70px !important;}
+
+/*Margenes con 8%*/
+.ml-r8{margin-left: 8%;}
+.mr-r8{margin-right: 8%;}
+.mt-r8{margin-top: 8%;}
+.mb-r8{margin-bottom: 8%;}
+
+/*Margenes con 4%*/
+.m-r4{margin: 4%;}
+.ml-r4{margin-left: 4%;}
+.mr-r4{margin-right: 4%;}
+.mt-r4{margin-top: 4%;}
+.mb-r4{margin-bottom: 4%;}
+
+/*Margenes con 2%*/
+.m-r2{margin: 2%;}
+.ml-r2{margin-left: 2%;}
+.mr-r2{margin-right: 2%;}
+.mt-r2{margin-top: 2%;}
+.mb-r2{margin-bottom: 2%;}
+
+.bootstrap-wrapper{
+    margin-bottom: 100px;
+}
+
+.row{
+    display: inline-block;
+}
+
+.text-left{
+    font-size: x-large;
+    font-family: 'Roboto';
+    color: #414141;
+}
+
+.text-centerAll{
+    display: inline-grid;
+    align-content: center;
+    text-align: center;
+}
+
+.picture{
+    text-align: center;
+    display: flex;
+    justify-content: center
+}
+
+.ficha{
+    max-block-size: -webkit-fill-available;
+}
+
+h2{
+    font-size: xx-large !important;
+    font-family: Roboto, "Helvetica Neue", sans-serif !important;
+    color: #000000;
+}
+
+a{
+    text-decoration: none;
+}
+
+footer {
+    color: white !important;
+    position: absolute;
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    opacity: 0.9;
+    font-size: 11pt;
+    height: 100px;
+    align-items: center;
+    display: inline-grid;
+    padding: 0px 25px;
+}
