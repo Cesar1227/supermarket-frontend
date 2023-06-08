@@ -9,7 +9,7 @@ import { MarketsService } from 'src/app/services/markets.service';
 })
 export class MarketComponent implements OnInit {
 
-  public elements: Array<any> = []; //Listado de tiendas
+  public elements: Array<any> = []; //Listado de productos
 
   public page: number = 1; //Número de página en la que estamos. Será 1 la primera vez que se carga el componente
 
@@ -17,10 +17,12 @@ export class MarketComponent implements OnInit {
 
   public numElements: number = 0; //Total de tiendas existentes
 
-  private numResults: number = 6;
+  public altImgs:string = "Imagen de referencia del producto";
+
   private elementPerPage: number = 6;
+  private numResults: number = this.elementPerPage;
   public nameMarket: string | null;
-  private market: string | null;
+  public market: any | null;
 
   constructor(private marketService:MarketsService, private rutaActiva: ActivatedRoute, private router:Router) { }
 

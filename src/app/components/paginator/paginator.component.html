@@ -1,6 +1,6 @@
 <div *ngIf="numElements" class="pagination justify-content-center">
 
-    <div *ngIf="page > 1" class="pagination__prev"><a class="page-link" (click)="anterior()">Anterior</a></div>
+    <div *ngIf="page > 1" class="pagination__prev"><a class="page-link" (click)="anterior()"><button mat-raised-button>Anterior</button></a></div>
 
     <div class="pagination__text">
 
@@ -10,5 +10,5 @@
 
     </div>
 
-    <div *ngIf="page < totalPages" class="pagination__next"><a class="page-link" (click)="siguiente()" >Siguiente</a></div>
+    <div *ngIf="page < totalPages" class="pagination__next"><a class="page-link" (click)="siguiente()" ><button mat-raised-button>Siguiente</button></a></div>
 </div>

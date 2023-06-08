@@ -103,10 +103,15 @@ button[mat-raised-button]{
     max-block-size: -webkit-fill-available;
 }
 
-h2{
+h2,h1{
     font-size: xx-large !important;
     font-family: Roboto, "Helvetica Neue", sans-serif !important;
     color: #000000;
+}
+
+h1{
+    text-align: center;
+    font-weight: 400;
 }
 
 a{

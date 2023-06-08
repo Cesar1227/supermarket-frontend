@@ -6,7 +6,7 @@
                     <mat-grid-tile>
                         <div class="ficha mt-r2 mb-r2 mr-r8 ml-r8">
                             <div class="picture">
-                                <img src="{{element.picture}}" class="img_ara ml-r4 mr-r4" width="100%" height="100%">
+                                <img src="{{element.picture}}" class="img_{{component}} ml-r4 mr-r4" width="100%" height="100%" alt="{{altImgs}} {{element.name}}">
                             </div>
                             <div class="info-element">
                                 <h2 class="elementTitle">
@@ -21,10 +21,7 @@
                 </div>
             </mat-grid-list>
         </div>
-          
-        
         <!--Aquí viene lo interesante-->
-        
         <app-paginator (paginaEmitter)="goToPage($event)" [page]="page" [totalPages]="totalPages" [numElements]="numElements"></app-paginator>
         
     </div>

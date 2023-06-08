@@ -8,7 +8,7 @@ import { MarketsService } from 'src/app/services/markets.service';
 })
 export class ElementViewerComponent implements OnInit {
 
-  @Input() public elements: Array<any> = []; //Listado de tiendas
+  @Input() public elements: Array<any> = []; //Listado de elementos
 
   @Input() public page: number = 1; //Número de página en la que estamos. Será 1 la primera vez que se carga el componente
 
@@ -16,9 +16,11 @@ export class ElementViewerComponent implements OnInit {
 
   @Input() public numElements: number = 0; //Total de tiendas existentes
 
-  @Output() elementsEmitter: EventEmitter<number> =  new EventEmitter();
+  @Input() public altImgs: string = "";
 
   @Output() paginaEmitter: EventEmitter<number> =  new EventEmitter();
+
+  @Input() public component:string = "";
 
   private numResults: number = 6;
 

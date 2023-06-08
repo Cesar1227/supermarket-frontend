@@ -16,6 +16,8 @@ export class MercadosComponent implements OnInit {
 
   public numElements: number = 0; //Total de tiendas existentes
 
+  public altImgs:string = "Imagen de referencia del supermercado";
+
   private numResults: number = 6;
   private elementPerPage: number = 6;
 
