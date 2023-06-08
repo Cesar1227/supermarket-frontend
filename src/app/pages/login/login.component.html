@@ -7,15 +7,29 @@
                         <img src = "../../../assets/login.png" width = "100px" height = "100px">
                     </div>
                     <h1 class="text-center">Ingresa tu usuario y contraseña</h1>
-                    <form (ngSubmit)="formSubmit()" class="form_login">
+                    <form [formGroup]="myForm" (ngSubmit)="formSubmit()" class="form_login">
                         <mat-form-field class = "full-width" appearance = "outline">
-                            <mat-label>Usuario</mat-label>
-                            <input [(ngModel)]= "loginData.username" required name = "username"  matInput placeholder = "Enter your Username"> 
+                            <mat-label>Email</mat-label>
+                            <input formControlName="email" [(ngModel)]= "loginData.username" required name = "username"  matInput placeholder = "Digite su usuario"> 
                         </mat-form-field>
                         <mat-form-field class = "full-width" appearance = "outline">
                             <mat-label>Contraseña</mat-label>
-                            <input [(ngModel)]= "loginData.password" required name = "password" type = "password" matInput placeholder = "Enter your password"> 
+                            <input formControlName="password" [(ngModel)]= "loginData.password" required name = "password" type = "password" matInput placeholder = "Digite su contraseña"> 
                         </mat-form-field>
+
+                        <div id="identificador_h">
+                            <div>
+                                <p>Para verificar que es humano ingrese el resultado de la operación</p>
+                            </div>
+                            <div class="row operacion">
+                                <label>{{num1}} {{operador}} {{num2}} = ?</label>
+                            </div>
+                            
+                            <mat-form-field width="">                                  
+                                <mat-label>Resultado</mat-label>
+                                <input formControlName="result" required id="result" [(ngModel)] = "validacion" name = "resultado" matInput placeholder = "Ingrese el resultado" matTooltip="Solo digite números ej: 5, -7, 0">
+                            </mat-form-field>
+                        </div>
 
                         <div class="container text-center">
                             <button class="btn-ingresar" type="submit" mat-raised-button color="black">Ingresar</button>

@@ -9,7 +9,7 @@
                     
                     <h1 class = "text-center">Registrate Aquí</h1>
                     
-                        <form (ngSubmit) = "formSubmit()" class="form_register">
+                        <form [formGroup]="myForm" (ngSubmit) = "formSubmit()" class="form_register">
                             <!--<mat-form-field class = "full-width" appearance = "outline">
                                 <mat-label>Name</mat-label>
                                 <input required [(ngModel)] = "user.name" name = "name"  matInput placeholder = "Enter your name"> 
@@ -23,17 +23,17 @@
 
                             <mat-form-field class = "full-width" appearance = "outline">
                                 <mat-label>User name</mat-label>
-                                <input required [(ngModel)] = "user.username" name = "username" matInput placeholder = "Enter your user name"> 
+                                <input formControlName="username" required [(ngModel)] = "user.username" name = "username" matInput placeholder = "Ingrese su usuario" matTooltip="Solo use números y letras"> 
                             </mat-form-field>
 
                             <mat-form-field class = "full-width" appearance = "outline">
                                 <mat-label>Email</mat-label>
-                                <input required [(ngModel)] = "user.email" name = "email" type = "email" matInput placeholder = "Enter your email"> 
+                                <input formControlName="email" required [(ngModel)] = "user.email" name = "email" type = "email" matInput placeholder = "Digite su dirección de correo" matTooltip="Digite una dirección de correo válida"> 
                             </mat-form-field>
 
                             <mat-form-field class = "full-width" appearance = "outline">
                                 <mat-label>Password</mat-label>
-                                <input required [(ngModel)] = "user.password" name = "password" type = "password" matInput placeholder = "Enter your password"> 
+                                <input formControlName="password" required [(ngModel)] = "user.password" name = "password" type = "password" matInput placeholder = "Enter your password" matTooltip="Asegurese de usar solo números, letras o caracteres especiales"> 
                             </mat-form-field>
                             
                             <!--<mat-form-field class = "full-width" appearance = "outline">
@@ -51,7 +51,7 @@
                                 
                                 <mat-form-field width="">                                  
                                     <mat-label>Resultado</mat-label>
-                                    <input required id="result" [(ngModel)] = "validacion" name = "resultado" matInput placeholder = "Ingrese el resultado">
+                                    <input formControlName="result" required id="result" [(ngModel)] = "validacion" name = "resultado" matInput placeholder = "Ingrese el resultado" matTooltip="Solo digite números ej: 5, -7, 0">
                                 </mat-form-field>
                             </div>
 

@@ -1,0 +1,11 @@
+#mapaSitio{
+    width: 70%;
+    height: 40%;
+}
+
+.item-center{
+    display: flex;
+    justify-items: end;
+    justify-content: center;
+    align-items: center;
+}

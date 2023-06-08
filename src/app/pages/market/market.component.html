@@ -1,6 +1,10 @@
-<meta *ngIf="market!=null" name="description" content="{{market.description}} | {{nameMarket}}"> 
-<meta name="keywords" content="{{nameMarket}}, productos {{nameMarket}}"/>
-<h1 class="mt20" id="nameMarket">{{nameMarket}}</h1>
-<app-element-viewer (paginaEmitter)="goToPage($event)" [elements]="elements" [page]="page" 
-                    [totalPages]="totalPages" [numElements]="numElements" [altImgs]="altImgs" component="market"></app-element-viewer>
-
+<meta *ngIf="market!=null" name="description" content="{{market.description}} | {{nameMarket}}">
+<meta name="keywords" content="{{nameMarket}}, productos {{nameMarket}}" />
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <h1 class="mt20" id="nameMarket">{{nameMarket}}</h1>
+        <app-element-viewer (paginaEmitter)="goToPage($event)" [elements]="elements" [page]="page"
+            [totalPages]="totalPages" [numElements]="numElements" [altImgs]="altImgs"
+            component="market"></app-element-viewer>
+    </div>
+</div>

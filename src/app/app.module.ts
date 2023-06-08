@@ -16,6 +16,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -28,6 +30,7 @@ import { MercadosComponent } from './pages/mercados/mercados.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { MarketComponent } from './pages/market/market.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { SupportComponent } from './pages/support/support.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     MercadosComponent,
     PaginatorComponent,
     MarketComponent,
-    ContactComponent
+    ContactComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,9 @@ import { ContactComponent } from './pages/contact/contact.component';
     MatToolbarModule,
     MatIconModule,
     MatPaginatorModule,
-    MatGridListModule
+    MatGridListModule,
+    ReactiveFormsModule,
+    MatTooltipModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

@@ -6,6 +6,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { MercadosComponent } from './pages/mercados/mercados.component';
 import { MarketComponent } from './pages/market/market.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { SupportComponent } from './pages/support/support.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,11 @@ const routes: Routes = [
   {
     path : 'contact',
     component : ContactComponent,
+    pathMatch : 'full'
+  },
+  {
+    path : 'support',
+    component : SupportComponent,
     pathMatch : 'full'
   }
 ];

@@ -1,0 +1,19 @@
+.container > div{
+    display: flex;
+    justify-content: center;
+}
+
+.item-center{
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+}
+
+mat-form-field{
+    background-color:#f5f5f5;
+    margin-bottom: 4%;
+}
+
+input{
+    border-bottom-style: none;
+}

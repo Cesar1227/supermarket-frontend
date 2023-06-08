@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
@@ -22,9 +23,18 @@ export class SignupComponent implements OnInit {
     email : ''
   }
 
+  myForm: FormGroup;
+
   public validacion:string='';
 
-  constructor(private userServices:UserService, private snack:MatSnackBar) { }
+  constructor(private userServices:UserService, private snack:MatSnackBar, public fb: FormBuilder) {
+    this.myForm = this.fb.group({
+      username: ['', [Validators.pattern(/^([a-zA-Z0-9_])*$/)]],
+      email: ['',[Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]],
+      password:['',[Validators.pattern(/^[a-zA-Z0-9_*.\-#!$]+$/)]],
+      result: ['', [Validators.pattern(/^[0-9-]+$/)]]
+    });
+  }
 
   ngOnInit(): void {
     this.generarOperacion();
@@ -37,6 +47,14 @@ export class SignupComponent implements OnInit {
     let n2 = Math.floor(Math.random()*10);
     this.num2=n2;
     this.operador=this.operadores[oper];
+    if(this.operador=="*" && n1==0 && n1==n2){
+      oper = Math.floor(Math.random()*3);
+      this.operador=this.operadores[oper];
+      n1 = Math.floor(Math.random()*10);
+      n2 = Math.floor(Math.random()*10);
+      this.num1=n1;
+      this.num2=n2;
+    }
     switch (this.operador) {
       case '+':
         this.result = n1+n2;
@@ -73,6 +91,7 @@ export class SignupComponent implements OnInit {
         || this.user.email == '' || this.user.email == null
         || this.user.password == '' || this.user.password == null
         || this.validacion == '' || this.validacion == null){
+          console.log(this.user.username+"-"+this.user.email+"-"+this.user.password+"-"+this.validacion);
       this.snack.open('Todos los campos son requeridos','Aceptar',{
         duration : 3000,
         verticalPosition : 'top',
@@ -80,6 +99,14 @@ export class SignupComponent implements OnInit {
       })
       this.generarOperacion();
       //alert('Username is required');
+      return;
+    }else if(this.myForm.invalid){
+      this.snack.open('Asegurese de digitar los campos adecuadamente','Aceptar',{
+        duration : 3000,
+        verticalPosition : 'top',
+        horizontalPosition : 'right'
+      })
+      this.generarOperacion();
       return;
     }
 
@@ -101,6 +128,7 @@ export class SignupComponent implements OnInit {
             verticalPosition : 'top',
             horizontalPosition : 'right'
           })
+          this.generarOperacion();
           //alert('An error has occurred in the system')
         }
       )
