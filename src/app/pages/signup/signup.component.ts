@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import Swal from 'sweetalert2';
 
@@ -27,7 +28,7 @@ export class SignupComponent implements OnInit {
 
   public validacion:string='';
 
-  constructor(private userServices:UserService, private snack:MatSnackBar, public fb: FormBuilder) {
+  constructor(private userServices:UserService, private snack:MatSnackBar, public fb: FormBuilder, public router:Router) {
     this.myForm = this.fb.group({
       username: ['', [Validators.pattern(/^([a-zA-Z0-9_])*$/)]],
       email: ['',[Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]],
@@ -111,6 +112,8 @@ export class SignupComponent implements OnInit {
     }
 
     if(this.validarResultado()){
+      this.router.navigate(['markets']);
+      return;
       this.userServices.addUser(this.user).subscribe(
         (data) => {
           console.log(data);

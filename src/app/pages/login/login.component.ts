@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   myForm: FormGroup;
   public validacion:string='';
 
-  constructor(private snack:MatSnackBar, private loginService:LoginService, public fb: FormBuilder) { 
+  constructor(private snack:MatSnackBar, private loginService:LoginService, public fb: FormBuilder, public router:Router) { 
     this.myForm = this.fb.group({
       email: ['',[Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)]],
       password:['',[Validators.pattern(/^[a-zA-Z0-9_*.\-#!$]+$/)]],
@@ -107,7 +108,8 @@ export class LoginComponent implements OnInit {
     }
 
     if(this.validarResultado()){
-      this.loginService.generateToken(this.loginData).subscribe(
+      this.router.navigate(['markets']);
+      /*this.loginService.generateToken(this.loginData).subscribe(
         (data:any)=>{
           console.log(data);
           this.loginService.loginUser(data.token);
@@ -117,7 +119,7 @@ export class LoginComponent implements OnInit {
         },(error: any) => {
           console.log(error);
         }
-      )
+      )*/
     }
     
   }
