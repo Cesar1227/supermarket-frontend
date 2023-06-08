@@ -27,6 +27,7 @@ import { ElementViewerComponent } from './components/element-viewer/element-view
 import { MercadosComponent } from './pages/mercados/mercados.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
 import { MarketComponent } from './pages/market/market.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MarketComponent } from './pages/market/market.component';
     ElementViewerComponent,
     MercadosComponent,
     PaginatorComponent,
-    MarketComponent
+    MarketComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
