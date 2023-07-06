@@ -1,4 +1,6 @@
+import { ArrayDataSource } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
+import { toArray } from 'rxjs';
 import { MarketsService } from 'src/app/services/markets.service';
 
 @Component({
@@ -36,13 +38,15 @@ export class MercadosComponent implements OnInit {
   //Recibe una página concreta
   public getMarketsByPage(page: number) {
 
-    this.marketService.listMarkets().subscribe(data =>{
-      //console.log(data);
+    this.marketService.listMarkets().subscribe(mercados =>{
+      //console.log(mercados);
+      let data = Object.values(mercados);
       //this.elements = data;
-      this.numElements = data.length;
+      console.log(data[0]);
+      this.numElements = data[0].length;
       this.totalPages = Math.round(this.numElements / this.numResults);
       //console.log("[element_viewer] total_pages: "+this.totalPages);
-      this.managePages(data,page);
+      this.managePages(data[0],page);
     });
   }
 

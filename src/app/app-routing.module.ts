@@ -7,6 +7,7 @@ import { MercadosComponent } from './pages/mercados/mercados.component';
 import { MarketComponent } from './pages/market/market.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SupportComponent } from './pages/support/support.component';
+import { ManageProductsComponent } from './pages/admin/manage-products/manage-products.component';
 
 
 const routes: Routes = [
@@ -43,6 +44,11 @@ const routes: Routes = [
   {
     path : 'support',
     component : SupportComponent,
+    pathMatch : 'full'
+  },
+  {
+    path : 'market/manage-products',
+    component : ManageProductsComponent,
     pathMatch : 'full'
   }
 ];

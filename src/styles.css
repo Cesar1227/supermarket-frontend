@@ -1,4 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --font-size: 1.1;
+}
+
+body {
+    font-size: calc(var(--font-size) * 13pt);
+}
 
 html, body { height: 100%; margin:0;}
 html{
@@ -33,6 +40,11 @@ button[mat-raised-button]{
     background-color: black;
     color: white;
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 9px;
 }
 
 /*Margenes con 20px*/
@@ -54,6 +66,7 @@ button[mat-raised-button]{
 .mt70{margin-left: 70px !important;}
 
 /*Margenes con 8%*/
+.m-r8{margin: 8%;}
 .ml-r8{margin-left: 8%;}
 .mr-r8{margin-right: 8%;}
 .mt-r8{margin-top: 8%;}
@@ -82,7 +95,7 @@ button[mat-raised-button]{
 }
 
 .text-left{
-    font-size: x-large;
+    font-size: calc(var(--font-size) * x-large);
     font-family: 'Roboto';
     color: #414141;
 }
@@ -103,8 +116,13 @@ button[mat-raised-button]{
     max-block-size: -webkit-fill-available;
 }
 
+#text-market{
+    font-size: calc(var(--font-size) * large) !important;
+    color: white !important;
+}
+
 h2,h1{
-    font-size: xx-large !important;
+    font-size: calc(var(--font-size) * xx-large) !important;
     font-family: Roboto, "Helvetica Neue", sans-serif !important;
     color: #000000;
 }
@@ -125,7 +143,7 @@ footer {
     background-color: #000000;
     color: white;
     opacity: 0.9;
-    font-size: 11pt;
+    font-size: calc(var(--font-size) * 11pt);
     height: 100px;
     align-items: center;
     display: inline-grid;

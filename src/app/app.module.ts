@@ -18,6 +18,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {GoogleMapsModule} from '@angular/google-maps'; 
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SignupComponent } from './pages/signup/signup.component';
@@ -31,6 +35,8 @@ import { PaginatorComponent } from './components/paginator/paginator.component';
 import { MarketComponent } from './pages/market/market.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SupportComponent } from './pages/support/support.component';
+import { ManageProductsComponent } from './pages/admin/manage-products/manage-products.component';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +51,8 @@ import { SupportComponent } from './pages/support/support.component';
     PaginatorComponent,
     MarketComponent,
     ContactComponent,
-    SupportComponent
+    SupportComponent,
+    ManageProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +70,11 @@ import { SupportComponent } from './pages/support/support.component';
     MatPaginatorModule,
     MatGridListModule,
     ReactiveFormsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTabsModule,
+    MatTableModule,
+    MatSidenavModule,
+    GoogleMapsModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

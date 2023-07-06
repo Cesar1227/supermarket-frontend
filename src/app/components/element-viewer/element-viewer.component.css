@@ -4,13 +4,13 @@
 }
 
 a{
-    font-size: x-large !important;
+    font-size: calc(var(--font-size) * x-large) !important;
     font-family: Roboto, "Helvetica Neue", sans-serif !important;
     color: #000000;
 }
 
 h2{
-    font-size: x-large !important;
+    font-size: calc(var(--font-size) * x-large) !important;
 }
 
 .img_market{

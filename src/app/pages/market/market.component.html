@@ -2,9 +2,84 @@
 <meta name="keywords" content="{{nameMarket}}, productos {{nameMarket}}" />
 <div class="bootstrap-wrapper">
     <div class="container">
-        <h1 class="mt20" id="nameMarket">{{nameMarket}}</h1>
+        <div class="mb-r2" id="banner-mercado">
+            <img id="img-market" src="{{market.picture}}">
+            <div id="text-market">
+                <h1 class="mt20" id="nameMarket" style="color:white; font-size: large;">{{nameMarket}}</h1>
+                <p id="description-market">{{market.description}}</p>
+            </div>
+        </div>
+        <div class="search-bar ml-r2">
+            <mat-form-field class="example-full-width">
+                <mat-label>Producto</mat-label>
+                <input matInput id="productToSearch" name="productToSearch">
+            </mat-form-field>
+            <button id="btn-buscar" (click)="searchProduct(product)" mat-raised-button>Buscar</button>
+        </div>
         <app-element-viewer (paginaEmitter)="goToPage($event)" [elements]="elements" [page]="page"
             [totalPages]="totalPages" [numElements]="numElements" [altImgs]="altImgs"
             component="market"></app-element-viewer>
+
+        <div class="super-information">
+            <h2 style="text-align: center;">Información del supermercado</h2>
+            <div *ngIf="market.schedule!=null">
+                <div  class="row">
+                    <h3>Horario</h3>
+
+                </div>
+                <div class="row">
+                    <p id="horario">{{market.schedule}}</p>
+                </div>
+            </div>
+
+            <div *ngIf="market.phone!=null">
+                <div  class="row">
+                    <h3>Teléfono</h3>
+
+                </div>
+                <div class="row">
+                    <a style="color:black" id="telefono" href="#">{{market.phone}}</a>
+                </div>
+            </div>
+
+            <div *ngIf="market.facebook!=null || market.instagram!=null">
+                <div  class="row">
+                    <h3>Redes Sociales</h3>
+                </div>
+                <div *ngIf="market.facebook!=null" class="row">
+                    Facebook:&nbsp;
+                    <a style="color:black" id="facebook" href="{{market.facebook}}">{{market.facebook}}</a>
+                </div>
+                <div *ngIf="market.instagram!=null" class="row">
+                    Instagram:&nbsp;
+                    <a style="color:black" id="instagram" href="{{market.instagram}}">{{market.instagram}}</a>
+                </div>
+            </div>
+
+            <div *ngIf="market.webpage!=null">
+                <div  class="row">
+                    <h3>Página Web</h3>
+                </div>
+
+                <div class="row">
+                    <a style="color:black" id="pagina-web" href="{{market.webpage}}">{{market.webpage}}</a>
+                </div>
+            </div>
+
+            <div >
+                <h3 style="text-align: center;">Visitanos</h3>
+                <div class="row">
+                    <iframe class="maps-supermarket" width="800" height="450" style="border:0" loading="lazy"
+                        allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBaZRCGQVcs8bopxYhYMpgyLczyGBF5BBc&q=Exito+Villavicencio">
+                        <!--src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBaZRCGQVcs8bopxYhYMpgyLczyGBF5BBc&q=Space+Needle,Seattle+WA">-->
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+
+        <!--<google-map width="750px" height="450px" [center]="center" [zoom]="zoom">
+        </google-map>-->
     </div>
 </div>

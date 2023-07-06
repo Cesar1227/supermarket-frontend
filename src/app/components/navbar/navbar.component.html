@@ -1,18 +1,93 @@
-<mat-toolbar color = 'white'>
-    <a [routerLink] = "'/'" mat-icon-button class = "example-icon" aria-label="Example icon-button with menu icon">
+<mat-toolbar color='white'>
+    <a [routerLink]="'/'" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>shopping_cart</mat-icon>
         <span>Lista Super</span>
     </a>
-    
+
     <span class="example-spacer"></span>
 
-    <a [routerLink]="'/markets'" mat-icon-button class="example-icon favorite-icon mr20 ml20" aria-label="Example icon-button with heart icon">
-        Mercados
-    </a>
-    <a [routerLink]="'/contact'" mat-icon-button class="example-icon favorite-icon mr20 ml20" aria-label="Example icon-button with heart icon">
-        Contacto
-    </a>
-    <a [routerLink]="'/login'" mat-raised-button class="example-icon favorite-icon mr20 ml20 btn-ingresar" aria-label="Example icon-button with heart icon">
-        Log in
-    </a>
+    <div class="float-right">
+        <!--<a [routerLink]="'/markets'" mat-icon-button class="example-icon favorite-icon mr20 ml20"
+            aria-label="Example icon-button with heart icon">
+            Mercados
+        </a>-->
+        <a style="color:black;" [routerLink]="'/markets'" class="ml-r2 mr-r2"
+            aria-label="Example icon-button with heart icon">
+            Mercados
+        </a>
+        <!--<a [routerLink]="'/contact'" mat-icon-button class="example-icon favorite-icon mr20 ml20"
+            aria-label="Example icon-button with heart icon">
+            Contacto
+        </a>-->
+        <a style="color:black;" [routerLink]="'/contact'" class="ml-r2 mr-r2"
+            aria-label="Example icon-button with heart icon">
+            Contacto
+        </a>
+        <!--<a [routerLink]="'/login'" mat-raised-button class="example-icon favorite-icon mr20 ml20 btn-ingresar"
+            aria-label="Example icon-button with heart icon">
+            Log in
+        </a>-->
+        <a [routerLink]="'/login'"  class=" ml-r4 mr-r4 btn-ingresar"
+            aria-label="Example icon-button with heart icon">
+            Log in
+        </a>
+
+        <mat-drawer-container class="example-container ml-r4">
+
+            <mat-drawer-content>
+                <button style="margin-left: 90px;" mat-raised-button (click)="drawer.toggle()"><mat-icon>settings_accessibility</mat-icon>
+                    </button>
+            </mat-drawer-content>
+            <mat-drawer id="mat-drawer-slice" #drawer mode=side>
+                <!--
+                <div (click)="changeFont('+')" class="font-control" id="font-up">A<sup>+</sup></div>
+                <div (click)="changeFont('-')" class="font-control" id="font-down">A<sup>-</sup></div>
+                -->
+                <div class="font-control ml10 mr10" (click)="fontUp()" id="font-up">A<sup>+</sup></div>
+                <div class="font-control ml10 mr10" (click)="fontDown()" id="font-down">A<sup>-</sup></div>
+            </mat-drawer>
+        </mat-drawer-container>
+
+    </div>
+
+
+
 </mat-toolbar>
+
+<script>
+    const getFontSize = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--font-size'));
+
+    function fontUp() {
+        console.log("aumentando");
+        let fontSize = getFontSize();
+        // aumentamos el valor de esa variable en 1.1
+        document.documentElement
+            .style.setProperty('--font-size', `${fontSize + 1}`);
+    }
+
+    const fontUp = element => {
+        console.log("aumentando");
+        // escuchamos los clicks del elemento
+        element.addEventListener('click', () => {
+            // obtenemos el valor de la variable CSS
+            let fontSize = getFontSize();
+            // aumentamos el valor de esa variable en 1.1
+            document.documentElement
+                .style.setProperty('--font-size', `${fontSize + 1}`);
+        })
+    }
+
+    const fontDown = element => {
+        console.log("disminuyendo");
+        // escuchamos los clicks del elemento
+        element.addEventListener('click', () => {
+            // obtenemos el valor de la variable CSS
+            let fontSize = getFontSize();
+            // disminuimos el valor de esa variable en 0.9
+            document.documentElement
+                .style.setProperty('--font-size', `${fontSize + 1}`);
+        })
+    }
+    fontUp(document.getElementById('font-up'));
+    fontDown(document.getElementById('font-down'));
+</script>

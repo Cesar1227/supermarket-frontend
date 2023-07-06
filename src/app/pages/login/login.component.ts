@@ -108,7 +108,7 @@ export class LoginComponent implements OnInit {
     }
 
     if(this.validarResultado()){
-      this.router.navigate(['markets']);
+      this.router.navigate(['market','manage-products']);
       /*this.loginService.generateToken(this.loginData).subscribe(
         (data:any)=>{
           console.log(data);
