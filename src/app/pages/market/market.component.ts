@@ -24,7 +24,7 @@ export class MarketComponent implements OnInit {
   public nameMarket: string | null;
   public market: any | null;
   public product: any;
-  public API_KEY:string = "AIzaSyBaZRCGQVcs8bopxYhYMpgyLczyGBF5BBc";
+  public API_KEY:string = "";
 
   public dataFilter:any;
   public filter:boolean = false;
