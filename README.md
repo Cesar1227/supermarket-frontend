@@ -1,3 +1,37 @@
+# ListaSuper
+* Aplicación web diseñada mediante Angular con conexión a API que actúa como backend.
+* Diseñada para mostrar al usuario los supermercados y productos en cada uno de ellos, así como el lugar más cercano para dirigirse hasta este.
+
+### Pruebala!!
+URL: https://64a6f7f24109ee58b94fe325--inquisitive-florentine-483735.netlify.app/
+
+</br>
+
+* #### Dashboard
+<img src="./doc/Dashboard.png" style="width: 100%; height: 80%"/>
+
+</br>
+
+* #### Login
+<img src="./doc/Login.png" style="width: 100%; height: 80%"/>
+
+</br>
+
+* #### Visualización de superMercados
+<img src="./doc/mercados.png" style="width: 100%; height: 80%"/>
+
+</br>
+
+* #### Vista de supermercado 1
+<img src="./doc/SuperAra.png" style="width: 100%; height: 80%"/>
+
+</br>
+
+* #### Vista de supermercado 2
+<img src="./doc/SuperExito.png" style="width: 100%; height: 80%"/>
+
+</br>
+
 # supermarketFrontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
